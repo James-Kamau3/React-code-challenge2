@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 //import BotCard from './BotCard';
 
 function BotsCollection() {
-  const [botsData, setBotsData] = useState([]);
+  const [bots, setData] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:8001/bots')
       .then(response => response.json())
-      .then(data => setBotsData(data))
+      .then(bots => setData(bots))
       .catch(error => console.error(error));
   }, []);
 
   return (
     <div className="bots-collection">
-      {botsData.map(bot => <div key={bot.id} bot={bot} >
+      {bots.map(bot => <div key={bot.id} bot={bot} >
         <ul>
             <li>
                 {bot.name}
