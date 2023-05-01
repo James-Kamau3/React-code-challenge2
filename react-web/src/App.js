@@ -9,7 +9,7 @@ function App() {
     <div>
       <h1 className='bots'>Bots</h1>
       <BotsCollection listedBots={listedBots} setListedBots={setListedBots}/>
-      <YourBotArmy listedBots={listedBots}/>
+      <YourBotArmy listedBots={listedBots} setListedBots={setListedBots}/>
       
     </div>
   )
