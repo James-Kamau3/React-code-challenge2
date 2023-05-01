@@ -1,8 +1,9 @@
 import React from 'react';
+import '../App.css'
 
-function EachBot({bot}) {
+function EachBot({bot, onClick}) {
   return (
-    <div className='each' key={bot.id} display={bot} >
+    <div className='each'onClick={() => onClick(bot)} key={bot.id} display={bot} >
       <ul>
         <h5 className='label'>Name: </h5>
         <li>
@@ -41,6 +42,7 @@ function EachBot({bot}) {
           {bot.updated_at}
         </li>
       </ul>
+      {/* <button onClick={() => onClick(bot)}>Enlist</button> */}
     </div>
   );
 }

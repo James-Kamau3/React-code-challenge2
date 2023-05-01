@@ -1,18 +1,21 @@
+import React from 'react';
+import EachBot from './EachBot';
+import '../App.css'
 
-// import React from 'react';
-// import EachBot from './EachBot';
-// import '../App.css'
+function YourBotArmy({ listedBots}) {
 
-// function YourBotArmy({ enlistedBots }) {
-//   return (
-//     <div className="your-bot-army">
-//       <h2>Your Bot Army</h2>
-//       {enlistedBots.map(bot => <EachBot bot={bot} key={bot.id} />)}
-//     </div>
-//   );
-// }
 
-// export default YourBotArmy;
+    return (
+      <div className="bots-collection">
+        <h2 className='bots'>Your Bot Army</h2>
+        {listedBots.map(bot => <EachBot bot={bot} key={bot.id} />)}
+      </div>
+    );
+  }
+  
+
+
+export default YourBotArmy;
 
 
 
