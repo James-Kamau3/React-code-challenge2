@@ -1,8 +1,21 @@
 import React from 'react';
 import '../App.css'
 
-function EachBot({bot, onClick}) {
+function EachBot({bot, onClick, listedBots, setListedBots}) {
+
+    function removeBot(id){
+        fetch(`http://localhost:8001/bots/${id}`, { 
+        method: 'DELETE' 
+    })
+        .then(() => {
+          setListedBots(listedBots.filter(bot => bot.id !== id));
+        })
+        .catch(error => console.error(error));
+
+    }
+
   return (
+    <>
     <div className='each'onClick={() => onClick(bot)} key={bot.id} display={bot} >
       <ul>
         <h5 className='label'>Name: </h5>
@@ -42,8 +55,9 @@ function EachBot({bot, onClick}) {
           {bot.updated_at}
         </li>
       </ul>
-      {/* <button onClick={() => onClick(bot)}>Enlist</button> */}
     </div>
+    <button id='btn2'onClick={()=> removeBot(bot.id)}>x</button>
+    </>
   );
 }
 

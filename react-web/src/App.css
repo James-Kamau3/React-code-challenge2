@@ -9,7 +9,7 @@
   
 }
 .each{
-  background-color: #c9c9c9;
+  background-color: #8d8585;
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
@@ -22,4 +22,8 @@
 .bots{
   text-align: center;
   margin-right: 230px;
+}
+
+#btn2{
+  background-color: rgba(250, 50, 50, 0.651);
 }
