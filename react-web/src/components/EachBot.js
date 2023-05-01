@@ -1,8 +1,8 @@
 import React from 'react';
 
-function EachBot({ bot, enlistBot }) {
+function EachBot({bot}) {
   return (
-    <div className='each' onClick={() => enlistBot(bot)} key={bot.id} display={bot} >
+    <div className='each' key={bot.id} display={bot} >
       <ul>
         <h5 className='label'>Name: </h5>
         <li>
