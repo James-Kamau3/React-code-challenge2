@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import EachBot from './EachBot';
 import '../App.css'
 
-function BotsCollection(){
+function BotsCollection({ enlistedBots, setEnlistedBots }){
   const [bots, setData] = useState([]);
 
   useEffect(() => {
@@ -12,9 +12,15 @@ function BotsCollection(){
       .catch(error => console.error(error));
   }, []);
 
+  function enlistBot(bot) {
+    if (!enlistedBots.includes(bot)) {
+      setEnlistedBots([...enlistedBots, bot]);
+    }
+  }
+
   return (
     <div className="bots-collection">
-      {bots.map(bot => <EachBot bot={bot} key={bot.id}  />)}
+      {bots.map(bot => <EachBot onClick={() => enlistBot(bot)} bot={bot} key={bot.id} />)}
     </div>
   );
 }
