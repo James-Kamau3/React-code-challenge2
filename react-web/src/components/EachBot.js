@@ -1,18 +1,16 @@
-import React from 'react';
 import '../App.css'
 
 function EachBot({bot, onClick, listedBots, setListedBots}) {
 
     function removeBot(id){
-        fetch(`http://localhost:8001/bots/${id}`, { 
+        fetch(`https://data-f8qc.onrender.com/bots/${id}`, { 
         method: 'DELETE' 
     })
         .then(() => {
           setListedBots(listedBots.filter(bot => bot.id !== id));
         })
         .catch(error => console.error(error));
-
-    }
+}
 
   return (
     <>

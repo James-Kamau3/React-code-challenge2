@@ -6,7 +6,7 @@ function BotsCollection({ listedBots, setListedBots }) {
   const [bots, setData] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8001/bots')
+    fetch('https://data-f8qc.onrender.com/bots')
       .then((response) => response.json())
       .then((bots) => setData(bots))
       .catch((error) => console.error(error));
